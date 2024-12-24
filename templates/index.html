@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Editor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        textarea { width: 100%; height: 75vh; }
+        label { font-weight: bold; display: block; margin: 10px 0 5px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Edit JSON File</h1>
+    <label for="jsonInput">Edit JSON:</label>
+    <textarea id="jsonInput"></textarea>
+    <button id="updateJson">Update JSON</button>
+    <p id="message"></p>
+
+    <script>
+        const jsonInput = document.getElementById("jsonInput");
+        const message = document.getElementById("message");
+
+        // Fetch the JSON data
+        fetch("/edit/get_json")
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    message.textContent = data.error;
+                    message.style.color = "red";
+                } else {
+                    jsonInput.value = JSON.stringify(data, null, 4);
+                }
+            })
+            .catch(error => {
+                message.textContent = "Failed to load JSON data.";
+                message.style.color = "red";
+            });
+
+        // Update JSON on the server
+        document.getElementById("updateJson").addEventListener("click", () => {
+            try {
+                const updatedData = JSON.parse(jsonInput.value);
+
+                fetch("/edit/update_json", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(updatedData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        message.textContent = data.error;
+                        message.style.color = "red";
+                    } else {
+                        message.textContent = data.message;
+                        message.style.color = "green";
+                    }
+                })
+                .catch(error => {
+                    message.textContent = "Failed to update JSON.";
+                    message.style.color = "red";
+                });
+            } catch (error) {
+                message.textContent = "Invalid JSON format.";
+                message.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

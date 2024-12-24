@@ -1,0 +1,33 @@
+{
+    "BOARD1": [
+        "eric-pi-4",
+        "shepardspi",
+        "bananacreampi",
+        "board1"
+    ],
+    "BOARD2": [
+        "eric-pi-4",
+        "board2"
+    ],
+    "BOARD3": [
+        "board3"
+    ],
+    "DISPLAY1": [
+        "eric-pi-1",
+        "dietpi",
+        "pumpkinpi",
+        "display1"
+    ],
+    "DISPLAY2": [
+        "eric-pi-2",
+        "display2"
+    ],
+    "DISPLAY3": [
+        "display3"
+    ],
+    "DISPLAYARGS": "?c=eyJzIjoyLjQwMDAwMDAwMDAwMDAwMTIsImgiOjEsInAiOnsieCI6MTcsInkiOjE3OH19&d=eyJzIjoxLjcwMDAwMDAwMDAwMDAwMDYsImgiOjEsInAiOnsieCI6MCwieSI6MH19&l=eyJzIjozLjAwMDAwMDAwMDAwMDAwMTgsImgiOjEsInAiOnsieCI6LTQ0OSwieSI6NDg2fX0%3D&n=eyJzIjoxLjkwMDAwMDAwMDAwMDAwMDgsImgiOjEsInAiOnsieCI6MTcsInkiOjQwMX19&o=eyJzIjoxLCJoIjoxLCJwIjp7IngiOjE5LCJ5Ijo4NzZ9fQ%3D%3D&p=eyJzIjoxLjYwMDAwMDAwMDAwMDAwMDUsImgiOjEsInAiOnsieCI6LTEzLCJ5IjoxMzJ9fQ%3D%3D&time=eyJzIjozLjEwMDAwMDAwMDAwMDAwMiwiaCI6MSwicCI6eyJ4IjotNTA2LCJ5IjozODZ9fQ%3D%3D",
+    "MEETURL": "https://liftingcast.com/meets/myolio9b64j7",
+    "PLATFORM1": "p9s2nu5jt9aj",
+    "PLATFORM2": "pen1t3lspntk",
+    "PLATFORM3": ""
+}
