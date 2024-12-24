@@ -1,0 +1,24 @@
+# This was setup using the following guides. I am assuming you are familiar with nginx configuration.
+https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-20-04
+# https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-22-04
+# 
+location / {
+		include uwsgi_params;
+		uwsgi_pass 127.0.0.1:8080;
+		uwsgi_read_timeout 30;
+		sendfile        on;
+		client_max_body_size 20M;
+		keepalive_timeout  0;
+
+	}
+	location /edit {
+		auth_basic "Email, checking the email";
+		auth_basic_user_file /etc/nginx/.htpasswd;
+		include uwsgi_params;
+		uwsgi_pass 127.0.0.1:8080;
+		uwsgi_read_timeout 30;
+		sendfile        on;
+		client_max_body_size 20M;
+		keepalive_timeout  0;
+
+	}
