@@ -8,4 +8,4 @@ I have added a page split with 2 IFRAMES to handle situations where one computer
 
 This needs to be run with something that can serve Python Flask apps.
 
-Copy pi.test.json to pi.json before running.
+Copy pi.json.sample to pi.json before running.
