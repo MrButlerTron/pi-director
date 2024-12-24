@@ -1,0 +1,24 @@
+[uwsgi]
+# Module to import
+module = pi-director:app
+
+# Run as a WSGI HTTP server
+#http-socket = 127.0.0.1:8080
+socket = :8080
+
+# Number of worker processes
+processes = 4
+
+# Enable threads
+threads = 2
+
+# Set the working directory
+# this is where you have the pi-director folder
+chdir = 
+
+# File to write logs
+# This can be where ever you want it to be
+logto = 
+
+# Allow graceful shutdown
+lazy-apps = true
