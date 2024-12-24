@@ -10,13 +10,9 @@ function check-internet () {
 	    handshake && $1 == "Verification:" { ok = $2; exit }
 	      END { exit ok != "OK" }'
       then
-	        #echo "we have connectivity"
-			#echo  $((counter+=1))
-			#break
 			return
 	else
 		return 1
-        #echo  $((counter+=1))
 	fi
 }
 
