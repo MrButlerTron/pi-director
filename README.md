@@ -5,3 +5,7 @@ The JSON file contains the meet URL for liftingcast, and then some arrays which 
 
 I have added a page split with 2 IFRAMES to handle situations where one computer/Pi is displaying 2 Boards.
 
+
+This needs to be run with something that can serve Python Flask apps.
+
+Copy pi.test.json to pi.json before running.
