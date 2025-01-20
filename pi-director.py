@@ -38,6 +38,7 @@ def handle_request():
     PLATFORM2 = config.get("PLATFORM2", "")
     PLATFORM3 = config.get("PLATFORM3", "")
     DISPLAYARGS = config.get("DISPLAYARGS", "")
+    STREAM = config.get("STREAM", [])
 
     # URLs for redirection
     urls = []
@@ -55,6 +56,8 @@ def handle_request():
         urls.append(f"{MEETURL}/platforms/{PLATFORM2}/board?scroll=true")
     if host in BOARD3:
         urls.append(f"{MEETURL}/platforms/{PLATFORM3}/board?scroll=true")
+    if host in STREAM:
+        urls.append(f"{MEETURL}/liveFeed/version1")
 
     # Redirect to a single URL if only one is found
     if len(urls) == 1:
