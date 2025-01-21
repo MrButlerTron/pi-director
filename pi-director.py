@@ -130,12 +130,12 @@ def update_json():
             return jsonify({"error": "MEETURL must be a string."}), 400
 
         # Define a regular expression for the allowed domains and format
-        meeturl_pattern = re.compile(r"^(http|https)://(backup\.liftingcast\.com|liftingcast\.com|liftingcast\.usaplma\.com|vpn\.liftingcast\.usaplma\.com)/meets/[\w-]+$")
+        meeturl_pattern = re.compile(r"^(http|https)://(backup\.liftingcast\.com|liftingcast\.com|liftingcast\.usaplma\.com|vpn\.liftingcast\.usaplma\.com|relay\.usaplma\.com)/meets/[\w-]+$")
 
         if not meeturl_pattern.match(new_data["MEETURL"]):
             return jsonify({
                  "error": "Invalid MEETURL format. Must use http or https and end with '/meets/{meetID}'. "
-                     "Allowed domains: backup.liftingcast.com, liftingcast.com, liftingcast.usaplma.com, vpn.liftingcast.usaplma.com."
+                     "Allowed domains: backup.liftingcast.com, liftingcast.com, liftingcast.usaplma.com, vpn.liftingcast.usaplma.com, relay.usaplma.com."
             }), 400
 
         # Validate hostnames
