@@ -42,7 +42,7 @@ def handle_request():
 
     # URLs for redirection
     urls = []
-    host = request.args.get('host')
+    host = request.args.get('host').lower()
 
     if host in DISPLAY1:
         urls.append(f"{MEETURL}/platforms/{PLATFORM1}/display{DISPLAYARGS}")
@@ -130,7 +130,7 @@ def update_json():
             return jsonify({"error": "MEETURL must be a string."}), 400
 
         # Define a regular expression for the allowed domains and format
-        meeturl_pattern = re.compile(r"^(http|https)://(backup\.liftingcast\.com|liftingcast\.com|liftingcast\.usaplma\.com|vpn\.liftingcast\.usaplma\.com|relay\.usaplma\.com)/meets/[\w-]+$")
+        meeturl_pattern = re.compile(r"^(http|https)://(backup\.liftingcast\.com|liftingcast\.com|liftingcast\.usaplma\.com|vpn\.liftingcast\.usaplma\.com|relay\.usaplma\.com|home\.usaplma\.com|vpn\.usaplma\.com)/meets/[\w-]+$")
 
         if not meeturl_pattern.match(new_data["MEETURL"]):
             return jsonify({
